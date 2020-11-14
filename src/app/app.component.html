@@ -20,29 +20,32 @@
   </tbody>
 </table>-->
 
-<!--ORIG <div style="background-image: url('assets/music-notes-background.png');">-->
+<!--<div style="background-color: gray">-->
 <div style="background-image: url('assets/music-visualizer-live.jpg');">
 
 
 <!--Promise Sample-->
 <div class="container">
-  <div class="jumbotron"style="background-image: url('assets/music-visualizer-live.jpg')">
+  <!--ORIG<div class="jumbotron" style="background-image: url('assets/music-visualizer-live.jpg')">-->
+    <div class="jumbotron" style="background-color:black;">
+
     <h2><strong>Promise Music</strong></h2>
 
  
 <form [formGroup]="itunesForm" (ngSubmit)="search(itunesForm.value)"><!--or itunesForm-->
   
-  <mat-label>Artist\Song Name</mat-label><br>
+  <mat-label style="color: white !important;">Artist\Song Name</mat-label><br>
  
   <mat-form-field>
     
-    <input matInput  id="name" formControlName="name" placeholder="" (keyup.enter)="search(itunesForm.value)">                
+    <input matInput  id="name" formControlName="name" style="background-color: white !important;color:gray;"
+ placeholder="" (keyup.enter)="search(itunesForm.value)">                
     </mat-form-field>
     <br><br>
-    <mat-label>Max rows</mat-label><br>
+    <mat-label style="color: white !important;">Max rows</mat-label><br>
 
     <mat-form-field>
-      <input matInput type="number"  id="rows" formControlName="rows" placeholder="">                
+      <input matInput type="number"  id="rows" formControlName="rows" style="color:gray;">                
     
       </mat-form-field>
   
@@ -50,8 +53,8 @@
 
 
     <p>
-      <br>
-    <button type="submit" class="btn btn-success">
+      <br><br>
+    <button type="submit" class="btn btn-info">
       <span class="glyphicon glyphicon-search"></span> Search
     </button>
  
