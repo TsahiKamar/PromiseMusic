@@ -23,6 +23,10 @@ input {
     /*background-size: 100% 100%;*/
     /*padding-top: 20%;
     padding-bottom: 20%;*/
+    padding-left: 2%;
+    position: relative;
+    top: 1px;
+		left: 350px;
   }
 
   li{
