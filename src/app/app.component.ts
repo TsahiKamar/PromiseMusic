@@ -58,11 +58,14 @@ ngDoCheck() {
       });
     
       this.itunesForm = new FormGroup({
-        name: new FormControl('')   
+        name: new FormControl(''),
+        rows:new FormControl('')   
         });
     
+        //Defaults
         this.itunesForm.patchValue({
-          name: '*'
+          name: '*',
+          rows:20
        });
 
   
@@ -148,12 +151,12 @@ public search(form:FormGroup) { //term:string
   var obj = JSON.parse(formStr);
   let term = obj.name;
 
-
+   let maxRows = obj.rows;
 
 
   let apiRoot = 'https://itunes.apple.com/search';
 
-  let api = `${apiRoot}?term=${term}&media=music&limit=20`;
+  let api = `${apiRoot}?term=${term}&media=music&limit=${maxRows}`;
 
   const promise = new Promise((resolve, reject) => {
     const apiURL = api;

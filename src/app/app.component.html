@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <!--Promise Sample-->
 <!--TR <table class="table table-striped">
   <thead>
@@ -18,22 +20,36 @@
   </tbody>
 </table>-->
 
+<div style="background-image: url('assets/music-notes-background.png');">
+
+
 <!--Promise Sample-->
 <div class="container">
-  <div class="jumbotron">
-    <strong>Apple Itunes - Music</strong>
+  <div class="jumbotron" style="background-image: url('assets/music-visualizer-live.jpg')">
+    <h2><strong>Promise Music</strong></h2>
 
  
 <form [formGroup]="itunesForm" (ngSubmit)="search(itunesForm.value)"><!--or itunesForm-->
   
-
+  <mat-label>Artist\Song Name</mat-label><br>
+ 
   <mat-form-field>
-    <mat-label>Artist Name: </mat-label>
-    <input matInput  id="name" formControlName="name" placeholder="Type artist name ..">                
-  
+    
+    <input matInput  id="name" formControlName="name" placeholder="" (keyup.enter)="search(itunesForm.value)">                
     </mat-form-field>
+    <br><br>
+    <mat-label>Max rows</mat-label><br>
+
+    <mat-form-field>
+      <input matInput type="number"  id="rows" formControlName="rows" placeholder="">                
+    
+      </mat-form-field>
+  
+  
+
 
     <p>
+      <br>
     <button type="submit" class="btn btn-success">
       <span class="glyphicon glyphicon-search"></span> Search
     </button>
@@ -50,30 +66,32 @@
   <!--<div class="panel panel-default">
     <div class="panel-body">A Basic Panel</div>
   </div>-->
-
+  
+  
 <ul class="list-group">
   <li class="list-group-item"
-      *ngFor="let track of results ; let i = index" [attr.data-index]="i">
+      *ngFor="let track of results ; let i = index" [attr.data-index]="i" style="background-image: url('assets/digital_music_background.jpg')">
       <div class="container">
-      <span class="badge">{{i}}</span>
+      <span class="badge">{{i+1}}</span>
       </div>
-      <img src="{{track.artworkUrl30}}" class="img-circle" alt="{{track.artistName}}">    
-    <strong>#Artist {{track.artistName}}</strong>
+      <br>
+
+
+    <!--<img src="{{track.artworkUrl30}}" class="img-circle" alt="{{track.artistName}}">-->    
     
     <button type="button" class="btn btn-info">
-      <span class="glyphicon glyphicon-playlist-music">
+      <!--<span class="glyphicon glyphicon-list">--> 
+        <img src="{{track.artworkUrl30}}" class="img-circle" alt="{{track.artistName}}">    
 
       <a target="_blank"
-      href="{{track.artistViewUrl}}">{{ track.artistName }}
+      href="{{track.artistViewUrl}}"> {{ track.artistName }}
       </a>
-      </span>
+      <!--</span>-->
     </button>
-  
-    <h4>#Collection {{track.collectionName}}</h4>
-    <h4>#PrimaryGenreName {{track.primaryGenreName}}</h4>
+    
+    <br><br>
+    <!--<button data-toggle="collapse" data-target="#demo">Collapsible</button>-->
 
-    <h4>{{track.country}}</h4>
-    <!--<img src="{{track.artworkUrl30}}">-->
     
     <button type="button" class="btn btn-primary">
       <span class="glyphicon glyphicon-music">
@@ -83,13 +101,33 @@
     </a>
     </span>
     </button>
-    
-    <br>
-    
-   
-    <h5>#Release date {{track.releaseDate}}</h5>
 
+  
+
+    <br>
+    <span class="label label-warning">
+     # <mark>Collection</mark> {{track.collectionName}}
+  </span>
+   <br>
+   <span class="label label-default">
+
+    # <mark>PrimaryGenreName</mark> {{track.primaryGenreName}}
+   </span>
+<br>
+       <!--<img src="{{track.artworkUrl30}}">-->
     
+    
+    
+    <span class="label label-danger">
+    # <mark>Release date</mark> {{track.releaseDate}}
+    </span>
+    <br>
+    <span class="label label-info">
+      # <mark>Country</mark> {{track.country}}
+      </span>
+  
+    
+
     
   </li>
 </ul>
