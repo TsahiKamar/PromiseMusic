@@ -8,20 +8,11 @@
   padding-left: 0%;
   /*position: relative;*/
   top: -50px;/*1px;*/
-  left: -60px;/*350px;*/
+  left: -10px;/* PC -60px;/*350px;*/
   right:0px;
   bottom:0px;
   
 }
-
-/*position:relative
-left: 0px;
-top: 0px
-right: 0px;
- bottom: 25px;
- background-color: #C9E6FF;
- margin: 0 auto;
- height: 100px;*/
 
 
 
@@ -30,13 +21,6 @@ li:hover {
 }
 
 
-/*label{
-    display: inline-block;
-    float: left;
-    clear: left;
-    width: 250px;
-    text-align: right;
-}*/
 input {
   display: inline-block;
   float: left;
