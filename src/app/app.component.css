@@ -7,6 +7,13 @@ li:hover {
     cursor: pointer;
 }
 
+@media (min-width: 1024px) {
+  input {
+    display: inline-block;
+    float: left;
+  }
+
+}
 
 /*input {
   display: inline-block;
