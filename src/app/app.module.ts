@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule ,CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
@@ -15,6 +16,7 @@ import { AppSandboxService } from 'app-sandbox.service';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
