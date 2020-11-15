@@ -28,7 +28,7 @@ import { AppSandboxService } from 'app-sandbox.service';
       }
     })
   ],
-  schemas:[CUSTOM_ELEMENTS_SCHEMA],
+  schemas:[],//CUSTOM_ELEMENTS_SCHEMA
   providers: [PromiseService,AppSandboxService],
   bootstrap: [AppComponent]
 })
