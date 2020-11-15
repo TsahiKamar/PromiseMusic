@@ -2,13 +2,9 @@
   position: relative;
   height:230px;/*260px*/
   width:350px;/*450px*/
-  /*background-size: 100% 100%;*/
-  /*padding-top: 20%;
-  padding-bottom: 20%;*/
-  padding-left: 0%;
-  /*position: relative;*/
+  padding-left: 5%;/*orig 0%*/
   top: -50px;/*1px;*/
-  left: 120px;/* PC -60px;/*350px;*/
+  left: 120px;/* orig PC -60px;/*350px;*/
   right:0px;
   bottom:0px;
   
