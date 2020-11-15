@@ -1,16 +1,7 @@
 
 
-.jumbotron {
-  position: relative;/*ORIG relative;*/
-  height:230px;/*260px*/
-  width:350px;/*450px*/
-  padding-left: 15%;/*orig 0%*/
-  top: -50px;/*1px;*/
-  left: 0px;/* orig PC -60px;/*350px;*/
-  right:0px;
-  bottom:0px;
-  
-}
+
+
 
 li:hover {
     cursor: pointer;
