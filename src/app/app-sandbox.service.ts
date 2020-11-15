@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { SetScreen } from './screen.actions';
-import { ApplicationState } from './application.state';
+import { SetScreen } from 'screen.actions';
+import { ApplicationState } from 'application.state';
 
 @Injectable()
 export class AppSandboxService {

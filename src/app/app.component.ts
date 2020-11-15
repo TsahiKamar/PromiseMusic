@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, IterableDiffer, IterableDiffers, OnInit } from '@angular/core';
 import { Form, FormControl, FormGroup, Validators } from '@angular/forms';
-import { AppSandboxService } from 'app-sandbox.service';
+import { AppSandboxService } from './app-sandbox.service';
 import { Observable } from 'rxjs/internal/Observable';
 //import { PromiseModel } from './promise.model';
 import { PromiseService } from './promise.service';

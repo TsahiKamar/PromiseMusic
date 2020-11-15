@@ -8,7 +8,7 @@ import { PromiseService } from './promise.service';
 
 import { StoreModule } from '@ngrx/store'; 
 import { reducers, metaReducers } from './reducers';
-import { AppSandboxService } from 'app-sandbox.service';
+import { AppSandboxService } from './app-sandbox.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,7 @@ import { AppSandboxService } from 'app-sandbox.service';
       }
     })
   ],
-  schemas:[],//CUSTOM_ELEMENTS_SCHEMA
+  schemas:[CUSTOM_ELEMENTS_SCHEMA],
   providers: [PromiseService,AppSandboxService],
   bootstrap: [AppComponent]
 })
