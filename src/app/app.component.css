@@ -1,14 +1,16 @@
 
 
 .jumbotron {
-  -webkit-background-size:cover;
-  -moz-background-size:cover;
-  background-size:cover;
-  -o-background-size:cover;
+  position: relative;
+  height:230px;/*260px*/
+  width:350px;/*450px*/
+  padding-left: 6%;/*orig 0%*/
+  top: -50px;/*1px;*/
+  left: 210px;/* orig PC -60px;/*350px;*/
+  right:0px;
+  bottom:0px;
   
 }
-
-
 
 li:hover {
     cursor: pointer;
