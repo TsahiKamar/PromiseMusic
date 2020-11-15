@@ -9,7 +9,6 @@ import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
 import { AppSandboxService } from 'app-sandbox.service';
 
-
 @NgModule({
   declarations: [
     AppComponent
