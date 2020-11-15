@@ -1,8 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, IterableDiffer, IterableDiffers, OnInit } from '@angular/core';
 import { Form, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AppSandboxService } from 'app-sandbox.service';
+import { Observable } from 'rxjs/internal/Observable';
 //import { PromiseModel } from './promise.model';
 import { PromiseService } from './promise.service';
+
+import { fromEvent } from 'rxjs/internal/observable/fromEvent';
+
+import { debounceTime, distinctUntilChanged, map, startWith, tap } from 'rxjs/operators';
+
+
 
 class Post {
   constructor(
@@ -19,7 +27,13 @@ class Post {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'mtest';
+  title = 'Promise Music';
+  
+  private _resize$: Observable<number>;
+  mobile$ = this.sb.mobile$;
+  tablet$ = this.sb.tablet$;
+  desktop$ = this.sb.desktop$;
+
   mForm:FormGroup;
   itunesForm:FormGroup;
 
@@ -34,7 +48,7 @@ export class AppComponent implements OnInit {
   data:[]; 
   //data1:[];
    
-  constructor(private iterableDiffers: IterableDiffers,private promiseService: PromiseService,private http:HttpClient     
+  constructor( private sb: AppSandboxService,private iterableDiffers: IterableDiffers,private promiseService: PromiseService,private http:HttpClient     
     ) {
     this.iterableDiffer = iterableDiffers.find([]).create(null);
 
@@ -51,7 +65,26 @@ ngDoCheck() {
 }
 
 
+
+
+ngOnDestroy(): void {
+  //tbc this._resize$.distinctUntilChanged();
+}
+
   ngOnInit(): void {
+
+  this._resize$ = fromEvent(window, 'resize')//Orig Observable.fromEvent
+    .pipe(
+      debounceTime(200),
+      map(() => window.innerWidth),
+      distinctUntilChanged(),
+      startWith(window.innerWidth),
+      tap(width => this.sb.setWindowWidth(width)),
+      tap(console.log)
+    );
+  this._resize$.subscribe();
+
+
 
     this.mForm = new FormGroup({
       name: new FormControl('')   
