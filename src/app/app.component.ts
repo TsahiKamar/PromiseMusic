@@ -10,8 +10,6 @@ import { fromEvent } from 'rxjs/internal/observable/fromEvent';
 
 import { debounceTime, distinctUntilChanged, map, startWith, tap } from 'rxjs/operators';
 
-
-
 class Post {
   constructor(
     public userId: number,
@@ -26,6 +24,7 @@ class Post {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent implements OnInit {
   title = 'Promise Music';
   
@@ -42,7 +41,6 @@ export class AppComponent implements OnInit {
   count:number=0;
   name:string;// = new FormControl('', [Validators.required, Validators.maxLength(15)]);
   private iterableDiffer: IterableDiffer<any>; //Changes listner
-
   
   results:[];// PromiseModel[];
   data:[]; 
